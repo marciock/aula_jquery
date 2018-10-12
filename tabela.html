@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./booststrap/css/bootstrap.min.css" >
+    <title>Jquery</title>
+  
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Usuários</h2>
+
+      <div class="form-group">
+        <input type="text" class="form-control"
+        id="busca" placeholder="Pesquisar ...">
+      </div>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <td>Chave</td>
+            <td>Nome</td>
+            <td>Email</td>
+          </tr>
+
+        </thead>
+        <tbody id="tabela">
+
+        </tbody>
+
+      </table>
+
+    </div>
+    
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery/jquery-3.3.1.slim.min.js" ></script>
+    <script src="pooper/popper.min.js" ></script>
+    <script src="bootstrap/js/bootstrap.min.js" ></script>
+    <script src="lista.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        users.map((f)=>{
+          let conteudo=`
+            <tr>
+              <td>${f.chave}</td>
+              <td>${f.nome}</td>
+              <td>${f.email}</td>
+            </tr>
+          `;
+          $('#tabela').append(conteudo);
+        });
+
+
+        $('#busca').on('keyup',function(){
+            //console.log($(this).val());
+            let letra=$(this).val().toLowerCase();
+            $('#tabela tr').filter(function(){
+              $(this).toggle($(this).text().toLowerCase().indexOf(letra) > -1);
+            })
+        })
+
+      });
+    </script>
+   
+  </body>
+</html>

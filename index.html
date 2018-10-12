@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="./booststrap/css/bootstrap.min.css" >
+    <title>Jquery</title>
+  
+  </head>
+  <body>
+    <h1>Faculdade Alfa</h1>
+    <a href="#" id="link1">Home</a>
+    <a href="#" id="link2">Quem Somos</a>
+    <a href="#" id="link3">Contato</a>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="jquery/jquery-3.3.1.slim.min.js" ></script>
+    <script src="pooper/popper.min.js" ></script>
+    <script src="bootstrap/js/bootstrap.min.js" ></script>
+    <script>
+      $(document).ready(function(){
+
+        const texto=$('h1').text();
+
+       /* $('h1').css('color','#f66');
+        $('h1').css('background','black');
+        $('h1').hover(function(){
+          $(this).text('O Imundo');
+        });
+        $('h1').mouseout(function(){
+          $(this).text(texto);
+        })
+      */
+
+     $('h1').css(
+       {
+       'color':'#f66',
+       'background':'black',
+       'padding':'10px',
+       'marging-top':'10px'
+
+     }
+     )
+     .hover(function(){
+          $(this).text('O Imundo');
+        })
+     .mouseout(function(){
+          $(this).text(texto);
+        });
+
+      $('a').css(
+        {
+         'background':'green',
+         'padding':'10px',
+         'border-radius':'6px',
+         'margin-top':'20px',
+         'text-decoration':'none',
+         'color':'white' 
+        }
+      )
+
+      $('#link1').css('color','black');
+
+      })
+    </script>
+   
+  </body>
+</html>
